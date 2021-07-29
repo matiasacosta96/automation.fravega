@@ -19,11 +19,7 @@ public class TestBase {
 	
 	@Before
 	public void openDriver() {
-		String os = System.getProperty("os.name");
-		if(os.startsWith("Windows"))
-			System.setProperty("webdriver.chrome.driver", "src/test/resources/webdriver/windows/chromedriver.exe");
-		else if(os.startsWith("Linux"))
-			System.setProperty("webdriver.chrome.driver", "src/test/resources/webdriver/linux/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/webdriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		init();
